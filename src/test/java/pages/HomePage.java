@@ -16,7 +16,6 @@ public class HomePage {
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
-		System.out.println("Driver in HomePage: " + driver);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -58,7 +57,7 @@ public class HomePage {
 	public ContactsPage goToContactsPage() {
 		contactsLink.click();
 
-		return new ContactsPage();
+		return new ContactsPage(driver);
 	}
 
 }

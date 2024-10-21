@@ -26,6 +26,6 @@ Feature: Login Feature of the Website
     Given User is on the Login page
     When I enter a valid username "validUser"
     And I enter a valid password "validPass"
-    And I click on the "Login" button
+    And I click on the Login button
     Then I should be redirected to the products dashboard
     And I should view the products category page

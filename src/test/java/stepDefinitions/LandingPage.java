@@ -1,31 +1,24 @@
 package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.HomePage;
 import pages.SignInPage;
+import utilities.DriverManager;
 
 public class LandingPage {
 
-	WebDriver driver;
+	WebDriver driver = DriverManager.getDriver();
 
 	HomePage hp;
 	SignInPage lp;
 
 	@Given("User is on the Login page")
 	public void user_is_on_the_login_page() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html#");
-
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-
+		driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
 		hp = new HomePage(driver);
 		hp.clickOnHamburgerMenu();
 		lp = hp.gotoLoginPage();

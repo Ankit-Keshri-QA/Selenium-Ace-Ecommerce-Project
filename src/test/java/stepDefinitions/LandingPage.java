@@ -41,6 +41,12 @@ public class LandingPage {
 		lp.enterPassword("Password123");
 	}
 
+	@When("I enter a valid username {string} and {string}")
+	public void i_enter_a_valid_username_and(String user, String pass) {
+		lp.enterUsername(user);
+		lp.enterPassword(pass);
+	}
+
 	@When("I click on the Login button")
 	public void i_click_on_the_button() {
 		lp.clickLogin();

@@ -24,8 +24,22 @@ Feature: Login Feature of the Website
 
   Scenario: Successful Login with valid credentials
     Given User is on the Login page
-    When I enter a valid username "validUser"
-    And I enter a valid password "validPass"
+    When I enter a valid username "username"
+    And I enter a valid password "password"
     And I click on the Login button
     Then I should be redirected to the products dashboard
     And I should view the products category page
+
+  Scenario Outline: User tries to login with valid credentials
+    Given User is on the Login page
+    When I enter a valid username "<username>" and "<password>"
+    And I click on the Login button
+    Then I should be redirected to the products dashboard
+    And I should view the products category page
+
+    Examples: 
+      | username | password  |
+      | user123  | pass123   |
+      | user321  | pass321   |
+      | user786  | pass786   |
+      | user7181 | pass27111 |

@@ -22,8 +22,10 @@ Feature: Login Feature of the Website
   I want to be able to log in to my account
   So that I can access the Online Products
 
-  Scenario: Successful Login with valid credentials
+  Background: 
     Given User is on the Login page
+
+  Scenario: Successful Login with valid credentials
     When I enter a valid username "username"
     And I enter a valid password "password"
     And I click on the Login button
@@ -31,7 +33,6 @@ Feature: Login Feature of the Website
     And I should view the products category page
 
   Scenario Outline: User tries to login with valid credentials
-    Given User is on the Login page
     When I enter a valid username "<username>" and "<password>"
     And I click on the Login button
     Then I should be redirected to the products dashboard

@@ -9,7 +9,7 @@ import pages.HomePage;
 import pages.SignInPage;
 import utilities.DriverManager;
 
-public class LandingPage {
+public class LoginPageSteps {
 
 	WebDriver driver = DriverManager.getDriver();
 

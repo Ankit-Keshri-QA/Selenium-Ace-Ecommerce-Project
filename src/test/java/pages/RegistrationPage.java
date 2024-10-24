@@ -15,28 +15,31 @@ public class RegistrationPage {
 		PageFactory.initElements(driver, this);
 	}
 
+	@FindBy(css = "center h1") // Assume "id" attribute for salutation dropdown
+	private WebElement heading;
+
 	@FindBy(id = "salutation") // Assume "id" attribute for salutation dropdown
 	private WebElement salutationDropdown;
 
-	@FindBy(name = "firstName") // Assume "name" attribute for first name field
+	@FindBy(name = "firstname") // Assume "name" attribute for first name field
 	private WebElement firstNameField;
 
-	@FindBy(name = "lastName") // Assume "name" attribute for last name field
+	@FindBy(name = "lastname") // Assume "name" attribute for last name field
 	private WebElement lastNameField;
 
-	@FindBy(name = "email") // Assume "name" attribute for email field
+	@FindBy(name = "emailId") // Assume "name" attribute for email field
 	private WebElement emailField;
 
-	@FindBy(name = "contactNumber") // Assume "name" attribute for contact number field
+	@FindBy(id = "contactNumber") // Assume "name" attribute for contact number field
 	private WebElement contactNumberField;
 
-	@FindBy(name = "userName") // Assume "name" attribute for username field
+	@FindBy(id = "usr") // Assume "name" attribute for username field
 	private WebElement userNameField;
 
-	@FindBy(name = "password") // Assume "name" attribute for password field
+	@FindBy(id = "pwd") // Assume "name" attribute for password field
 	private WebElement passwordField;
 
-	@FindBy(xpath = "//button[@type='submit']") // Assume XPath for Submit button
+	@FindBy(xpath = "//input[@type='submit']") // Assume XPath for Submit button
 	private WebElement submitButton;
 
 	// Methods to interact with the form elements
@@ -72,6 +75,17 @@ public class RegistrationPage {
 
 	public void clickSubmit() {
 		submitButton.click();
+	}
+
+	public String getHeadingText() {
+		String headingText = heading.getText();
+
+		return headingText;
+	}
+
+	public String getRegisterText() {
+		String text = heading.getText();
+		return text;
 	}
 
 }

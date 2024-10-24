@@ -44,8 +44,10 @@ public class SignInPage {
 		loginButton.click();
 	}
 
-	public void clickRegister() {
+	public RegistrationPage clickRegister() {
 		registerButton.click();
+		
+		return new RegistrationPage(driver);
 	}
 
 }

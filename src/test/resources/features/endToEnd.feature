@@ -6,7 +6,7 @@ Feature: Complete End To End Functionality to Buy a Product
 
   Scenario: Successful Login and Purchase
     Given User is on the Home page of the Website
-    When User Click on Hamburger Menu
+    When User Click on Hamburger Menu on "Home Page"
     And User clicks on the Sign in Link
     Then User should be redirected to the Login page
     And User enters the "username" and "password"
@@ -17,6 +17,6 @@ Feature: Complete End To End Functionality to Buy a Product
     And User clicks on Add To Cart button
     Then User should be redirected to Confirmation page
     And User should view the success message of purchase
-    And User Click on Hamburger Menu
+    And User Click on Hamburger Menu on "Confirmation Page"
     And User clicks on Home link
     Then User should be redirected to the Home Page again

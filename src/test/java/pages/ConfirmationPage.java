@@ -17,7 +17,7 @@ public class ConfirmationPage {
 	@FindBy(css = "center h1")
 	private WebElement successMessage;
 
-	@FindBy(css = "[type='checkbox']")
+	@FindBy(xpath = "//div[@id='menuToggle']/input")
 	private WebElement hamburgerMenu;
 
 	@FindBy(css = "[href*='index']")

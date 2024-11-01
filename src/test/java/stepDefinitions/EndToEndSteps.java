@@ -30,10 +30,17 @@ public class EndToEndSteps {
 		driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
 	}
 
-	@When("User Click on Hamburger Menu")
-	public void user_click_on_hamburger_menu() {
-		hp = new HomePage(driver);
-		hp.clickOnHamburgerMenu();
+	@When("User Click on Hamburger Menu on {string}")
+	public void user_click_on_hamburger_menu(String page) {
+
+		if ("Home Page".equalsIgnoreCase(page)) {
+			hp = new HomePage(driver);
+			hp.clickOnHamburgerMenu();
+
+		} else if ("Confirmation Page".equalsIgnoreCase(page)) {
+			hp = ccp.goToHomePage();
+		}
+
 	}
 
 	@When("User clicks on the Sign in Link")
@@ -43,7 +50,7 @@ public class EndToEndSteps {
 
 	@Then("User enters the {string} and {string}")
 	public void user_enters_the_and(String username, String password) {
-		lp.enterUsername("ExistingUser");
+		lp.enterUsername("EndToEndTestUser");
 		lp.enterPassword("Password131");
 
 	}
@@ -73,7 +80,7 @@ public class EndToEndSteps {
 	@Then("User should be redirected to Confirmation page")
 	public void user_should_be_redirected_to_confirmation_page() {
 		String url = driver.getCurrentUrl();
-		Assert.assertEquals(url , "https://anupdamoda.github.io/AceOnlineShoePortal/AddedToCartSuccessfulmessage.html");
+		Assert.assertEquals(url, "https://anupdamoda.github.io/AceOnlineShoePortal/AddedToCartSuccessfulmessage.html");
 	}
 
 	@Then("User should view the success message of purchase")
@@ -84,12 +91,12 @@ public class EndToEndSteps {
 
 	@Then("User clicks on Home link")
 	public void user_clicks_on_home_link() {
-		hp = ccp.goToHomePage();
+		ccp.goToHomePage();
 	}
 
 	@Then("User should be redirected to the Home Page again")
 	public void user_should_be_redirected_to_the_home_page_again() {
 		String text = hp.getHeadingText();
-		Assert.assertEquals(text,"One Stop Shop for all your Shoes needs!");
+		Assert.assertEquals(text, "One Stop Shop for all your Shoes needs!");
 	}
 }

@@ -15,6 +15,7 @@
 			<version>4.17.0</version>
 		</dependency>
 
+
 		<!-- Cucumber -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -65,6 +66,8 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.0.9</version>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -76,8 +79,7 @@
 				<version>3.1.2</version>
 				<configuration>
 					<includes>
-						<include>**/Test*.java</include>
-						<include>**/*Test.java</include>
+						<include>runner.TestRunner</include>
 					</includes>
 				</configuration>
 			</plugin>

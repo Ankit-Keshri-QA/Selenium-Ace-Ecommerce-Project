@@ -1,3 +1,4 @@
+@happyPath @smoke @regression
 Feature: Complete End To End Functionality to Buy a Product
   
   As a registered user,

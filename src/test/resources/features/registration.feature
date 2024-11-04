@@ -4,11 +4,13 @@ Feature: New User Registration on Website
   I want to be able to register myself
   So that I can buy products on the website
 
+@smoke @sanity
   Scenario: Successful Registration of User
     Given User is on the Login Page
     When User Clicks on Registration button
     Then User should see the registration page
 
+@sanity
   Scenario: New User Register
     Given the user is on the registration page
     When the user enters "firstName" in the First Name field

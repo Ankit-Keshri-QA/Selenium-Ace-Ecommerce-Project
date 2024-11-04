@@ -25,6 +25,7 @@ Feature: Login Feature of the Website
   Background: 
     Given User is on the Login page
 
+@sanity
   Scenario: Successful Login with valid credentials
     When I enter a valid username "username"
     And I enter a valid password "password"
@@ -32,6 +33,7 @@ Feature: Login Feature of the Website
     Then I should be redirected to the products dashboard
     And I should view the products category page
 
+@smoke
   Scenario Outline: User tries to login with valid credentials
     When I enter a valid username "<username>" and "<password>"
     And I click on the Login button

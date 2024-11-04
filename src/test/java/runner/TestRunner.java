@@ -12,13 +12,15 @@ import io.cucumber.junit.CucumberOptions;
     plugin = {
         "pretty", 
         "html:target/cucumber-reports/cucumber.html",
-        "json:target/cucumber-reports/cucumber.json"
+        "json:target/cucumber-reports/cucumber.json",
          },
     monochrome = true,
-    dryRun =  false	
+    dryRun =  false,
+    tags = "@happyPath"
     
 )
 
 public class TestRunner {
-
+	
+	
 }

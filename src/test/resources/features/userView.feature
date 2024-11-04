@@ -1,3 +1,4 @@
+@smoke @regression
 Feature: User Navigation on the application
   
   As a new user visiting website for the first time,

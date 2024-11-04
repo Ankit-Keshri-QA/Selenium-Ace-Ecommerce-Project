@@ -1,3 +1,4 @@
+@negative
 Feature: Negative Testing of the website
   
   As a system admin
